@@ -23,4 +23,4 @@ const newHallConfig = parsedChosedInfo.hallConfig.replace(/selected/g, "taken");
 parsedChosedInfo.hallConfig = newHallConfig;
 localStorage.setItem('chosenInfo', JSON.stringify(parsedChosedInfo));
 
-document.querySelector(".acceptin-button").addEventListener('click', fetchData('event=sale_add&timestamp=${parsedChosedInfo.timestamp}&hallId=${parsedChosedInfo.hallId}&seanceId=${parsedChosedInfo.seanceId}&hallConfiguration=${newHallConfig}', response => response))
+document.querySelector(".acceptin-button").addEventListener('click', fetchData(`event=sale_add&timestamp=${parsedChosedInfo.timestamp}&hallId=${parsedChosedInfo.hallId}&seanceId=${parsedChosedInfo.seanceId}&hallConfiguration=${newHallConfig}`, response => response))

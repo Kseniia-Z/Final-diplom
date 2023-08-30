@@ -15,8 +15,8 @@ infoHall.textContent = parsedChosedInfo.hallName.substring(0,3) + ' ' + parsedCh
 priceStandart.textContent = parsedChosedInfo.priceStandart;
 priceVip.textContent = parsedChosedInfo.priceVip;
 
-fetchData('event=get_hallConfig&timestamp=${parsedChosedInfo.timestamp}&hallId=${parsedChosedInfo.hallId}&seanceId=${parsedChosedInfo.seanceId}', response => {
-    response ? selectSeanse.hallConfig = response : console.log('Нет проданных билетов');
+fetchData(`event=get_hallConfig&timestamp=${parsedChosedInfo.timestamp}&hallId=${parsedChosedInfo.hallId}&seanceId=${parsedChosedInfo.seanceId}`, response => {
+    response ? parsedChosedInfo.hallConfig = response : console.log('Нет проданных билетов');
     confStepWrapper.innerHTML = parsedChosedInfo.hallConfig;
 
     let chairs = document.querySelectorAll('.conf-step__chair');
